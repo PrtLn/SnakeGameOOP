@@ -10,15 +10,22 @@ namespace SnakeGame
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Console.SetBufferSize(80, 25);
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
+            // drawing lines
+            HorizontalLine lineUp = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine lineDown = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine lineRight = new VerticalLine(0, 24, 0, '+');               
+            VerticalLine lineLeft = new VerticalLine(0, 24, 78, '+');
+            lineUp.Drow();
+            lineRight.Drow();
+            lineDown.Drow();
+            lineLeft.Drow();
 
-            HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
-            line.Drow();
-            
+            // drawing points
+            Point p = new Point(4, 5, '*');
+            p.Draw();
+
             Console.ReadLine();
         }        
     }
