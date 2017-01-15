@@ -10,68 +10,40 @@ namespace SnakeGame
     {
         static void Main(string[] args)
         {
-            // primitive variables
-            Console.WriteLine("primitive variables:");
-            int a = 1;
-            Func1(a);
-            Console.WriteLine("Call Func1() a = " + a); // a = 1
-
-            a = 1;
-            Func2(a);
-            Console.WriteLine("Call Func2() a = " + a); // a = 1
-
-            a = 1;
-            Func3(a);
-            Console.WriteLine("Call Func3() a = " + a); // a = 1
-            Console.WriteLine();
-
-            // reference variables
-            Console.WriteLine("reference variables");
             Point p1 = new Point(1, 3, '*');
-            Move(p1, 10, 10);
-            Console.WriteLine("Call Move() p1.x = " + p1.x + ", p1.y = " + p1.y); // p1.x = 11 (1 + 10); p1.y = 13 (3 + 10)
+            p1.Draw();
 
             Point p2 = new Point(4, 5, '#');
-            p1 = p2;
-            Console.WriteLine("p1 = p2 -> p1.x = " + p1.x + ", p1.y = " + p1.y + ", p1.sym = " + p1.sym); // 4 5 #
-            p2.x = 8;
-            p2.y = 8; 
-            Console.WriteLine("p1.x = " + p1.x + ", p1.y = " + p1.y); // p1.x = 8, p1.y = 8
-            Console.WriteLine("p2.x = " + p2.x + ", p2.y = " + p2.y); // p2.x = 8, p2.y = 8
+            p2.Draw();
 
-            p1 = new Point(1, 3, '*');
-            Update(p1);                                                             // p = new Point() -> "* empty new point"
-            Console.WriteLine("Call Update() p1.x = " + p1.x + ", p1.y = " + p1.y); // p1.x = 1, p1.y = 3
+            Point p3 = new Point(3, 7, '^');
+            p3.Draw();
 
+            List<int> numList = new List<int>();
+            numList.Add(0);
+            numList.Add(1);
+            numList.Add(2);
+
+            int a = numList[0];
+            int b = numList[1];
+            int c = numList[2];
+
+            foreach(int i in numList)
+            {
+                Console.WriteLine(i);
+            }
+
+            numList.RemoveAt(0);
+
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            Console.WriteLine("p1: x = " +p1.x + ", y = " + p1.y + ", sym = " + p1.sym);
+            pList.Add(p2);
+            Console.WriteLine("p2: x = " + p2.x + ", y = " + p2.y + ", sym = " + p2.sym);
+            pList.Add(p3);
+            Console.WriteLine("p3: x = " + p3.x + ", y = " + p3.y + ", sym = " + p3.sym);
+            
             Console.ReadLine();
-        }
-
-        public static void Func1(int value)
-           {
-           }
-
-        public static void Func2(int value)
-        {
-            value = value + 1;
-        }
-
-        public static void Func3(int x)
-        {
-            x = x + 1;
-        }
-
-
-        public static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
-
-        public static void Update(Point p)
-        {
-            p = new Point();
-        }
-
-    
+        }        
     }
 }
