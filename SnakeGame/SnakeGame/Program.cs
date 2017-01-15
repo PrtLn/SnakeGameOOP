@@ -12,7 +12,7 @@ namespace SnakeGame
         {
             Console.SetBufferSize(80, 25);
 
-            // drawing lines
+            // drawing frame
             HorizontalLine lineUp = new HorizontalLine(0, 78, 0, '+');
             HorizontalLine lineDown = new HorizontalLine(0, 78, 24, '+');
             VerticalLine lineRight = new VerticalLine(0, 24, 0, '+');               
@@ -22,9 +22,10 @@ namespace SnakeGame
             lineDown.Drow();
             lineLeft.Drow();
 
-            // drawing points
+            // drawing snake
             Point p = new Point(4, 5, '*');
-            p.Draw();
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadLine();
         }        
