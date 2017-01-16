@@ -28,6 +28,10 @@ namespace SnakeGame
             Snake snake = new Snake(p, 5, Direction.RIGHT);
             snake.Drow();
 
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
             while(true)
             {
                 if(Console.KeyAvailable)
