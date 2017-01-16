@@ -18,6 +18,7 @@ namespace SnakeGame
             }
         }
 
+        // overload of IsHit method
         internal bool IsHit(Figure figure)
         {
             foreach(var p in pList)
