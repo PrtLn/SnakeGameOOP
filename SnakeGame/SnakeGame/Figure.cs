@@ -10,6 +10,7 @@ namespace SnakeGame
     {
         protected List<Point> pList;
 
+        // 'virtual' - keyword that allows override Draw method
         public virtual void Drow()
         {
             foreach (Point p in pList)
@@ -18,6 +19,7 @@ namespace SnakeGame
             }
         }
 
+        // overload of IsHit method
         internal bool IsHit(Figure figure)
         {
             foreach(var p in pList)
@@ -37,6 +39,5 @@ namespace SnakeGame
             }
             return false;
         }
-
     }
 }

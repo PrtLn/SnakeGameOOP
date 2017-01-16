@@ -28,7 +28,7 @@ namespace SnakeGame
             while (true)
             {
                 if(walls.IsHit(snake) || snake.IsHitTail())
-                {
+                {                    
                     break;
                 }
                 if(snake.Eat(food))
@@ -49,6 +49,6 @@ namespace SnakeGame
                     snake.HandleKey(key.Key);
                 }
             }
-        }             
+        }          
     }             
 }
