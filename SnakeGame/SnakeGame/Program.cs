@@ -27,7 +27,11 @@ namespace SnakeGame
 
             while (true)
             {
-                if (snake.Eat(food))
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+                if(snake.Eat(food))
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
@@ -39,7 +43,7 @@ namespace SnakeGame
 
                 Thread.Sleep(150);
 
-                if (Console.KeyAvailable)
+                if(Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);

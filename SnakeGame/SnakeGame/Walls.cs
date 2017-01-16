@@ -26,6 +26,16 @@ namespace SnakeGame
             wallList.Add(lineRight);
         }
 
+        internal bool IsHit(Figure figure)
+        {
+            foreach(var wall in wallList)
+            {
+                if(wall.IsHit(figure))
+                    return true;               
+            }
+            return false;
+        }
+
         public void Draw()
         {
             foreach(var wall in wallList)
