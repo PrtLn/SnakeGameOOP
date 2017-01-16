@@ -34,14 +34,24 @@ namespace SnakeGame
 
             while(true)
             {
-                if(Console.KeyAvailable)
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(150);
+
+                if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);                  
+                    snake.HandleKey(key.Key);
                 }
-                Thread.Sleep(150);
-                snake.Move();
-            }
+            }            
         }        
     }
 }
