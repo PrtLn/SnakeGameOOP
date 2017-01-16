@@ -49,6 +49,7 @@ namespace SnakeGame
                     snake.HandleKey(key.Key);
                 }
             }
+            Console.ReadLine();
         }          
     }             
 }
